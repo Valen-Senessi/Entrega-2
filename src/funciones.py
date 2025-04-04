@@ -45,6 +45,9 @@ def imprimirRankingFinal(lista):
         mvp = jugadores_ordenados[0][0]
         ranking_final[mvp]["MVPs"] += 1
         ranking_ordenado = sorted(ranking_final.items(), key=lambda x: x[1]["puntos"], reverse=True)
-    
-    print(ranking_ordenado)            
-    
+    print("RANKING FINAL ORDENADO POR PUNTOS CON LOS VALORES TOTALES DE LAS 5 PARTIDAS: ")
+    for jugador, stats in ranking_ordenado:
+        print(f"Jugador '{jugador}': STATS = "
+        f"(Kills totales: {stats['kills']}, Assists totales: {stats['assists']}, "
+        f"Deaths totales: {stats['deaths']}, MVPs totales: {stats['MVPs']})"
+        f" {stats['puntos']} puntos totales")
